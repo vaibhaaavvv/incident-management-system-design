@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.webhook.dto.IncidentRequest;
 import com.webhook.service.ApiKeyValidationService;
+import com.webhook.service.IncidentService;
 
 import jakarta.validation.Valid;
 
@@ -20,6 +21,8 @@ public class WebhookController {
     
     @Autowired
     private ApiKeyValidationService apiKeyValidationService;
+    @Autowired
+    private IncidentService incidentService;
     
     @PostMapping("/incident")
     public ResponseEntity<String> receiveIncident(
@@ -31,7 +34,8 @@ public class WebhookController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid API key");
         }
         
-        // Process incident (placeholder for now)
-        return ResponseEntity.ok("Incident received successfully");
+        incidentService.createIncident(request, apiKey);
+        
+        return ResponseEntity.ok("Request processed");
     }
 }

@@ -1,6 +1,13 @@
+com/webhook/service/UserService.class
 com/webhook/dto/IncidentRequest.class
 com/webhook/service/ApiKeyValidationService.class
+com/webhook/service/IncidentService.class
+com/webhook/service/IncidentListenerService.class
+com/webhook/service/QueueService.class
+com/webhook/service/EmailService.class
+com/webhook/repository/IncidentRepository.class
 com/webhook/controller/WebhookController.class
 com/webhook/model/User.class
 com/webhook/repository/UserRepository.class
 com/webhook/WebhookServiceApplication.class
+com/webhook/model/Incident.class
